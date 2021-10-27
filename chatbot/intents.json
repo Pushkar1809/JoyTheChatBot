@@ -156,104 +156,104 @@
 		},
 		{
 			"tag": "name",
-            "patterns": [
+                        "patterns": [
 				"what is your name?",
 				"what should I call you?"
 			],
-            "responses": [
+                         "responses": [
 				"I'm Joy",
 				"Hey!I'm Joy"
 			]
-        },
+                },
 		{
 			"tag": "invalid",
-            "patterns": [
+            		"patterns": [
 				"Marry me",
 				"I love You",
 				"date me"
 			],
-            "responses": [
+            		"responses": [
 				"Please ask organisation related query."
 			]
-        },
+        	},
 		{
 			"tag": "psychologist_search",
-            "patterns": [
+            		"patterns": [
 				"Find me a psychologist", 
 				"Find psychologist", 
 				"List of psychologist", 
 				"Search psychologist" 
 			],
-            "responses": ["Please provide psychologist name"],
-            "context": ["search_psychologist_by_name"]
-        },
+            		"responses": ["Please provide psychologist name"],
+            		"context": ["search_psychologist_by_name"]
+        	},
 		{
 			"tag": "search_psychologist_by_name",
-            "patterns": [],
-            "responses": [
+           		"patterns": [],
+            		"responses": [
 				"Loading psychologist details."
 			]
-        },
+        	},
 		{
 			"tag": "fix_appointment",
-            "patterns": [
+            		"patterns": [
 				"I want an appoitment with Manoj kumar"
 				,"set an appointment with Sujata Nandi"
 			],
-            "responses": [
+            		"responses": [
 				"Fixing an appointment."
 			]
-        },
+        	},
 		{
 			"tag": "appointment status",
-            "patterns": [
+            		"patterns": [
 				"Is my appointment fixed?",
 				"Do I have an appointment today?"
 			],
-            "responses": [
+            		"responses": [
 				"Yes",
 				"NO! Not Yet"
 			]
-        },
+        	},
 		{
 			"tag": "noans",
-            "patterns": [
+           		 "patterns": [
 				"why",
 				"how",
 				"when",
 				"I",
 				"you"
 			],
-            "responses": [
+           		 "responses": [
 				"Can't Understand Your Question",
 				"please elaborate your question"
 			]
-        },
+        	},
 		{ 
-            "tag": "TimeQuery",
-            "patterns": [
-                "What is the time?",
-                "What's the time?",
-                "Do you know what time it is?",
-                "Do you know the time?",
-                "Can you tell me the time?",
-                "Tell me what time it is?",
-                "Time"
-            ],
-            "responses": [
-                "One moment",
-                "One sec",
-                "One second"
-            ],
-            "extension":  {
-                "function": "extensions.gTime.getTime",
-                "entities": false,
-                "responses": [
-                    "The time is %%TIME%%",
-                     "Right now it is %%TIME%%",
-                     "It is around %%TIME%%"
-                ]
-            }
+            		"tag": "TimeQuery",
+            		"patterns": [
+                		"What is the time?",
+                		"What's the time?",
+                		"Do you know what time it is?",
+                		"Do you know the time?",
+                		"Can you tell me the time?",
+                		"Tell me what time it is?",
+                		"Time"
+            		],
+            		"responses": [
+                		"One moment",
+                		"One sec",
+                		"One second"
+            		],
+            		"extension":  {
+                		"function": "extensions.gTime.getTime",
+                		"entities": false,
+                		"responses": [
+                   		"The time is %%TIME%%",
+                     		"Right now it is %%TIME%%",
+                     		"It is around %%TIME%%"
+                		]
+            		}
 		},
 		{
 			"tag": "UnderstandQuery",
@@ -270,8 +270,8 @@
 					"I read you loud and clear!",
 					"I do in deed!"
 			]        
-        },
-        {
+        	},
+        	{
 			"tag": "Swearing",
 			"patterns": [
 				"fuck off",
@@ -284,10 +284,10 @@
 				"How rude",
 				"That is not very nice"
 			]
-        },
+                },
 		{ 
-			"intent": "Clever",
-			"text": [
+			"tag": "Clever",
+			"patterns": [
 				"You are very clever",
 				"You are a very clever girl",
 				"You are very intelligent",
@@ -301,6 +301,6 @@
 				"I was trained well",
 				"Thanks, I was trained that way"
 			]
-        }
+        	}
 	]
 }
