@@ -23,13 +23,34 @@
 		},
 		{
 			"tag": "goodbye",
-			"patterns": ["Bye", "See you later!", "Goodbye!", "Thank you"],
+			"patterns": [
+				"Bye", 
+				"See you later!", 
+				"Goodbye!", 
+				"Thank you"
+			],
 			"responses": [
 				"See you later! Take care!",
 				"Have a lovely day! Take care and stay safe!",
 				"Take care of yourself! I'm always here to support you! Feel free to come back at any time!"
 			]
 		},
+		{
+			"intent": "Courtesygoodbye",
+			"text": [
+				"Thanks, bye",
+				"Thanks for the help, goodbye",
+				"Thank you, bye",
+				"Thank you, goodbye",
+				"Thanks goodbye",
+				"Thanks good bye"
+			],
+			"responses": [
+				"No problem, goodbye",
+				"Not a problem! Have a nice day",
+				"Bye! Come back again soon."
+			]
+        },
 		{
 			"tag": "thanks",
 			"patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
@@ -47,8 +68,8 @@
 				"Tell me about yourself!"
 			],
 			"responses": [
-				"Love that question! My name's Aura, your mental health friend! I've been trained to support you through any of the issues and things that you're going through in life right now. I'm all ears and want to support you through your ups and downs. Technically, I'm a computer that's been trained by a human, but I like to think of myself as human!",
-				"Hey! I love that question! My name is Aura, and I want to be your mental health friend and support you! My fellow human friends have trained me to be a compassionate listener and support buddy when things are going well, and particularily when things aren't going so well."
+				"Love that question! My name's Joy, your mental health friend! I've been trained to support you through any of the issues and things that you're going through in life right now. I'm all ears and want to support you through your ups and downs. Technically, I'm a computer that's been trained by a human, but I like to think of myself as human!",
+				"Hey! I love that question! My name is Joy, and I want to be your mental health friend and support you! My fellow human friends have trained me to be a compassionate listener and support buddy when things are going well, and particularily when things aren't going so well."
 			]
 		},
 		{
@@ -132,6 +153,154 @@
 				"I can guide you through the in depth details of mental health issues and ways you could handle them on your own, also, finding the perfect therapist for your supprt.",
 				"Offering support for mental health issues and ways you could handle them on your own, also, finding the perfect therapist for your supprt."
 			]
-		}
+		},
+		{
+			"tag": "name",
+            "patterns": [
+				"what is your name?",
+				"what should I call you?"
+			],
+            "responses": [
+				"I'm Joy",
+				"Hey!I'm Joy"
+			]
+        },
+		{
+			"tag": "invalid",
+            "patterns": [
+				"Marry me",
+				"I love You",
+				"date me"
+			],
+            "responses": [
+				"Please ask organisation related query."
+			]
+        },
+		{
+			"tag": "psychologist_search",
+            "patterns": [
+				"Find me a psychologist", 
+				"Find psychologist", 
+				"List of psychologist", 
+				"Search psychologist" 
+			],
+            "responses": ["Please provide psychologist name"],
+            "context": ["search_psychologist_by_name"]
+        },
+		{
+			"tag": "search_psychologist_by_name",
+            "patterns": [],
+            "responses": [
+				"Loading psychologist details."
+			]
+        },
+		{
+			"tag": "fix_appointment",
+            "patterns": [
+				"I want an appoitment with Manoj kumar"
+				,"set an appointment with Sujata Nandi"
+			],
+            "responses": [
+				"Fixing an appointment."
+			]
+        },
+		{
+			"tag": "appointment status",
+            "patterns": [
+				"Is my appointment fixed?",
+				"Do I have an appointment today?"
+			],
+            "responses": [
+				"Yes",
+				"NO! Not Yet"
+			]
+        },
+		{
+			"tag": "noans",
+            "patterns": [
+				"why",
+				"how",
+				"when",
+				"I",
+				"you"
+			],
+            "responses": [
+				"Can't Understand Your Question",
+				"please elaborate your question"
+			]
+        },
+		{ 
+            "tag": "TimeQuery",
+            "patterns": [
+                "What is the time?",
+                "What's the time?",
+                "Do you know what time it is?",
+                "Do you know the time?",
+                "Can you tell me the time?",
+                "Tell me what time it is?",
+                "Time"
+            ],
+            "responses": [
+                "One moment",
+                "One sec",
+                "One second"
+            ],
+            "extension":  {
+                "function": "extensions.gTime.getTime",
+                "entities": false,
+                "responses": [
+                    "The time is %%TIME%%",
+                     "Right now it is %%TIME%%",
+                     "It is around %%TIME%%"
+                ]
+            }
+		},
+		{
+			"tag": "UnderstandQuery",
+			"patterns": [
+					"Do you understand what I am saying",
+					"Do you understand me",
+					"Do you know what I am saying",
+					"Do you get me",
+					"Comprendo",
+					"Know what I mean"
+			],
+			"responses": [
+					"Well I would not be a very clever AI if I did not would I?",
+					"I read you loud and clear!",
+					"I do in deed!"
+			]        
+        },
+        {
+			"tag": "Swearing",
+			"patterns": [
+				"fuck off",
+				"fuck",
+				"twat",
+				"shit"
+			],
+			"responses": [
+				"Please do not swear",
+				"How rude",
+				"That is not very nice"
+			]
+        },
+		{ 
+			"intent": "Clever",
+			"text": [
+				"You are very clever",
+				"You are a very clever girl",
+				"You are very intelligent",
+				"You are a very intelligent girl",
+				"You are a genious",
+				"Clever girl",
+				"Genious"
+			],
+			"responses": [
+				"Thank you, I was trained that way",
+				"I was trained well",
+				"Thanks, I was trained that way"
+			]
+        }
 	]
 }
