@@ -7,10 +7,11 @@ const Default = () => {
 	return (
 		<div className="def">
 			<div className="joy">
-				<img src={chatting} alt="cover" style={{ width: "10rem" }} />
+				<img src={chatting} alt="cover" />
 			</div>
 			<div className="btns">
 				<Link to="/login">Login</Link>
+				<span>OR</span>
 				<Link to="/register">Register</Link>
 			</div>
 		</div>
