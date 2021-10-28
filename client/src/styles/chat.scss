@@ -1,0 +1,71 @@
+@import "var";
+
+.chat {
+	background-image: linear-gradient(
+		to bottom right,
+		lighten($accent-1, 40%),
+		lighten($accent-2, 40%),
+		lighten($punch-1, 40%)
+	);
+	margin-left: 7rem;
+	height: 100vh;
+	width: 100%;
+	display: flex;
+	.chatbox {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		width: 60%;
+		.box {
+			background-image: linear-gradient(to bottom right, $dark-1, $dark-2);
+			width: 75%;
+			height: 80%;
+			border-radius: 1rem;
+			.chat-display {
+				overflow: scroll;
+				height: calc(100%-4rem);
+			}
+			.input-area {
+				bottom: 0;
+				display: flex;
+				align-items: center;
+				height: 4rem;
+				width: 100%;
+				input {
+					color: $light-1;
+					border: none;
+					padding: 1.3rem;
+					font-size: 1.2rem;
+					height: calc(100%-0.9rem);
+					width: 80%;
+					background-color: lighten($dark-1, 20%);
+					border-radius: 1rem 0 0 0;
+					&:focus {
+						outline: none;
+					}
+				}
+				button {
+					background-image: linear-gradient(
+						to bottom right,
+						$accent-1,
+						$accent-2
+					);
+					color: $light-1;
+					border: none;
+					width: 15%;
+					height: 100%;
+					border-radius: 0 1rem 0 0;
+				}
+			}
+		}
+	}
+	.joy {
+		display: flex;
+		justify-content: flex-start;
+		align-items: center;
+		width: 40%;
+		img {
+			width: 80%;
+		}
+	}
+}
