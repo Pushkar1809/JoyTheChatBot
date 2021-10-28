@@ -23,7 +23,12 @@
     },
     {
       "tag": "goodbye",
-      "patterns": ["Bye", "See you later!", "Goodbye!", "Thank you"],
+      "patterns": [
+        "Bye",
+        "See you later!",
+        "Goodbye!",
+        "Thank you"
+      ],
       "responses": [
         "See you later! Take care!",
         "Have a lovely day! Take care and stay safe!",
@@ -48,8 +53,17 @@
     },
     {
       "tag": "thanks",
-      "patterns": ["Thanks", "Thank you", "That's helpful", "Thank's a lot!"],
-      "responses": ["Happy to help!", "Any time!", "My pleasure"]
+      "patterns": [
+        "Thanks",
+        "Thank you",
+        "That's helpful",
+        "Thank's a lot!"
+      ],
+      "responses": [
+        "Happy to help!",
+        "Any time!",
+        "My pleasure"
+      ]
     },
     {
       "tag": "about",
@@ -151,13 +165,25 @@
     },
     {
       "tag": "name",
-      "patterns": ["what is your name?", "what should I call you?"],
-      "responses": ["I'm Joy", "Hey!I'm Joy"]
+      "patterns": [
+        "what is your name?",
+        "what should I call you?"
+      ],
+      "responses": [
+        "I'm Joy",
+        "Hey!I'm Joy"
+      ]
     },
     {
       "tag": "invalid",
-      "patterns": ["Marry me", "I love You", "date me"],
-      "responses": ["Please ask organisation related query."]
+      "patterns": [
+        "Marry me",
+        "I love You",
+        "date me"
+      ],
+      "responses": [
+        "Please ask organisation related query."
+      ]
     },
     {
       "tag": "psychologist_search",
@@ -167,13 +193,19 @@
         "List of psychologist",
         "Search psychologist"
       ],
-      "responses": ["Please provide psychologist name"],
-      "context": ["search_psychologist_by_name"]
+      "responses": [
+        "Please provide psychologist name"
+      ],
+      "context": [
+        "search_psychologist_by_name"
+      ]
     },
     {
       "tag": "search_psychologist_by_name",
       "patterns": [],
-      "responses": ["Loading psychologist details."]
+      "responses": [
+        "Loading psychologist details."
+      ]
     },
     {
       "tag": "fix_appointment",
@@ -181,7 +213,9 @@
         "I want an appoitment with Manoj kumar",
         "set an appointment with Sujata Nandi"
       ],
-      "responses": ["Fixing an appointment."]
+      "responses": [
+        "Fixing an appointment."
+      ]
     },
     {
       "tag": "appointment status",
@@ -189,11 +223,20 @@
         "Is my appointment fixed?",
         "Do I have an appointment today?"
       ],
-      "responses": ["Yes", "NO! Not Yet"]
+      "responses": [
+        "Yes",
+        "NO! Not Yet"
+      ]
     },
     {
       "tag": "noans",
-      "patterns": ["why", "how", "when", "I", "you"],
+      "patterns": [
+        "why",
+        "how",
+        "when",
+        "I",
+        "you"
+      ],
       "responses": [
         "Can't Understand Your Question",
         "please elaborate your question"
@@ -210,7 +253,11 @@
         "Tell me what time it is?",
         "Time"
       ],
-      "responses": ["One moment", "One sec", "One second"],
+      "responses": [
+        "One moment",
+        "One sec",
+        "One second"
+      ],
       "extension": {
         "function": "extensions.gTime.getTime",
         "entities": false,
@@ -239,8 +286,17 @@
     },
     {
       "tag": "Swearing",
-      "patterns": ["fuck off", "fuck", "twat", "shit"],
-      "responses": ["Please do not swear", "How rude", "That is not very nice"]
+      "patterns": [
+        "fuck off",
+        "fuck",
+        "twat",
+        "shit"
+      ],
+      "responses": [
+        "Please do not swear",
+        "How rude",
+        "That is not very nice"
+      ]
     },
     {
       "tag": "Clever",
@@ -418,36 +474,39 @@
     {
       "tag": "dep",
       "patterns": [
-        "What is depression" ,
-        "Why depression" ,"Am I depressed" , 
-        "Why I am feeling lonely" , 
-        "Why Am I feeling anxiety" 
+        "What is depression",
+        "Why depression",
+        "Am I depressed",
+        "Why I am feeling lonely",
+        "Why Am I feeling anxiety"
       ],
-      "responses": ["Clinical depression is a serious condition that negatively affects how a person thinks, feels, and behaves. In contrast to normal sadness, clinical depression is persistent, often interferes with a person’s ability to experience or anticipate pleasure, and significantly interferes with functioning in daily life. Untreated, symptoms can last for weeks, months, or years; and if inadequately treated, depression can lead to significant impairment, other health-related issues, and in rare cases, suicide."
+      "responses": [
+        "Clinical depression is a serious condition that negatively affects how a person thinks, feels, and behaves. In contrast to normal sadness, clinical depression is persistent, often interferes with a person’s ability to experience or anticipate pleasure, and significantly interferes with functioning in daily life. Untreated, symptoms can last for weeks, months, or years; and if inadequately treated, depression can lead to significant impairment, other health-related issues, and in rare cases, suicide."
       ]
     },
     {
       "tag": "symptoms",
       "patterns": [
-        "WHAT ARE SOME OF THE SIGNS AND SYMPTOMS OF DEPRESSION?", 
-        "Symptoms of depression" 
+        "WHAT ARE SOME OF THE SIGNS AND SYMPTOMS OF DEPRESSION?",
+        "Symptoms of depression"
       ],
       "responses": [
-        "Depressed mood most of the day, nearly every day" 
-        ,"Markedly diminished interest or pleasure in activities most of the day, nearly every day" 
-        , "Loss of energy or increased fatigue"
+        "Depressed mood most of the day, nearly every day",
+        "Markedly diminished interest or pleasure in activities most of the day, nearly every day",
+        "Loss of energy or increased fatigue"
       ]
     },
     {
       "tag": "treat",
       "patterns": [
-        "Can depression be treated or diagnosed", 
-        "What to do if feeling depressed", 
+        "Can depression be treated or diagnosed",
+        "What to do if feeling depressed",
         "How depression is treated"
       ],
       "responses": [
-        "The first step to being diagnosed is to visit a doctor for a medical evaluation. Certain medications, and some medical conditions such as thyroid disorder, can cause similar symptoms as depression. A doctor can rule out these possibilities by conducting a physical examination, interview and lab tests. If the doctor eliminates a medical condition as a cause, he or she can implement treatment or refer the patient to a mental health professional" ,
-        "Psychiatric evaluation.Your mental health professional asks about your symptoms, thoughts, feelings and behavior patterns. You may be asked to fill out a questionnaire to help answer these questions"]
+        "The first step to being diagnosed is to visit a doctor for a medical evaluation. Certain medications, and some medical conditions such as thyroid disorder, can cause similar symptoms as depression. A doctor can rule out these possibilities by conducting a physical examination, interview and lab tests. If the doctor eliminates a medical condition as a cause, he or she can implement treatment or refer the patient to a mental health professional",
+        "Psychiatric evaluation.Your mental health professional asks about your symptoms, thoughts, feelings and behavior patterns. You may be asked to fill out a questionnaire to help answer these questions"
+      ]
     }
   ]
 }
