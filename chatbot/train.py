@@ -17,9 +17,9 @@ tags = []
 xy = []
 
 for intent in intents["intents"]:
-    tag = intent["tag"]
+    tag = intent["intent"]
     tags.append(tag)
-    for pattern in intent["patterns"]:
+    for pattern in intent["text"]:
         w = tokenize(pattern)
         words.extend(w)
         xy.append((w, tag))

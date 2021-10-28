@@ -1,12 +1,9 @@
 # Library imports
 import random
 import json
-import numpy as np
 import torch
-import torch.nn as nn
-from torch.utils.data import Dataset, DataLoader 
 
-from nltk_utils import tokenize, stem, bag_of_words
+from nltk_utils import tokenize, bag_of_words
 from model import ChatbotNN
 
 device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
@@ -34,12 +31,9 @@ model.eval()
 bot_name = "Joy"
 print("I'm here to fill you up with JOY, type 'quit' to exit")
 
-while True:
-    sentence = input("You: ")
-    if sentence=="quit":
-        break
 
-    sentence = tokenize(sentence)
+def get_res(msg):
+    sentence = tokenize(msg)
     X = bag_of_words(sentence, words)
     X = X.reshape(1, X.shape[0])
     X = torch.from_numpy(X)
@@ -52,8 +46,19 @@ while True:
     prob = probs[0][pred.item()]
 
     for intent in intents["intents"]:
-        if tag == intent["tag"]:
-            print(f"{bot_name}: {random.choice(intent['responses'])}")
+        if tag == intent["intent"]:
+            return random.choice(intent['responses'])
+        
+    return random.choice(["Pardon me!", "Could you reapeat", "I don't understand, please come again."])
 
-    # else:
-    #     print(f"{bot_name}: I don't understand. Could you repeat?")
+
+def main():
+    while True:
+        sentence = input("You: ")
+        if sentence=="quit":
+            break
+
+        print(f"{bot_name}: {get_res(sentence)}")
+
+if __name__=="__main__":
+    main()
