@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import joy1 from "../assets/joy1.png";
 import joy2 from "../assets/joy2.png";
 import joy3 from "../assets/joy3.png";
@@ -9,13 +9,38 @@ import "../styles/chat.scss";
 import { RiSendPlane2Fill as Send } from "react-icons/ri";
 
 const Chat = () => {
-	const joys = [joy1, joy2, joy3, joy4, joy5];
-	let joy = joys[Math.floor(Math.random() * joys.length)];
-
+	const [joy, setJoy] = useState(joy1);
 	const [message, setMessage] = useState("");
+	const [intents, setIntents] = useState([]);
+
+	useEffect(() => {
+		const joys = [joy1, joy2, joy3, joy4, joy5];
+		setJoy(joys[Math.floor(Math.random() * joys.length)]);
+	}, []);
+
 	const handleMessage = (e) => {
+		e.preventDefault();
 		setMessage(e.target.value);
 	};
+
+	const handleSend = () => {
+		fetch("http://127.0.0.1:5000/predict", {
+			method: "POST",
+			body: JSON.stringify({ message: message }),
+			mode: "cors",
+			headers: { "Content-Type": "application/json" },
+		})
+			.then((response) => response.json())
+			.then((response) => {
+				let answer = response.answer;
+				let intent = response.intent;
+				setIntents([...intents, intent]);
+				let newMeg = { name: "Joy", message: answer };
+				updateUi(newMeg);
+			});
+	};
+
+	const updateUi = (newMeg) => {};
 
 	return (
 		<>
@@ -30,7 +55,7 @@ const Chat = () => {
 								name="message"
 								onChange={(e) => handleMessage(e)}
 							/>
-							<button>
+							<button onClick={() => handleSend}>
 								<Send size={30} />
 							</button>
 						</div>

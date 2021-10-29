@@ -42,12 +42,9 @@ def get_res(msg):
     _, pred = torch.max(output, dim=1)
     tag = tags[pred.item()]
 
-    probs = torch.softmax(output, dim=1)
-    prob = probs[0][pred.item()]
-
     for intent in intents["intents"]:
         if tag == intent["intent"]:
-            return random.choice(intent['responses'])
+            return {"message": random.choice(intent['responses']), "intent": intent["intent"]}
         
     return random.choice(["Pardon me!", "Could you reapeat", "I don't understand, please come again."])
 

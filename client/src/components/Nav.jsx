@@ -2,10 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { BsFillChatSquareFill as ChatIcon } from "react-icons/bs";
 import { CgMediaPodcast as Media } from "react-icons/cg";
-import {
-	SiHandshake as HandshakeIcon,
-	SiRobotframework as Robo,
-} from "react-icons/si";
+import { SiHandshake as HandshakeIcon } from "react-icons/si";
 import { GoPerson as ProfileIcon } from "react-icons/go";
 import "../styles/nav.scss";
 

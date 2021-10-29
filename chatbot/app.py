@@ -12,7 +12,7 @@ def pred():
     text = request.get_json().get("message")
     #validate text 
     res = get_res(text)
-    message = {"answer": res}
+    message = {"answer": res["message"], "intent": res["intent"]}
     return jsonify(message)
 
 if __name__ == "__main__":

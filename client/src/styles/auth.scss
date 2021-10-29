@@ -2,6 +2,7 @@
 
 .login,
 .register {
+	position: relative;
 	background-image: linear-gradient(
 		to bottom right,
 		lighten($accent-1, 30%),
@@ -12,6 +13,15 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	.err {
+		position: absolute;
+		bottom: 1rem;
+		right: 1rem;
+		border-radius: 0.5rem;
+		background-color: rgba(red, 0.5);
+		color: rgb(94, 0, 0);
+		border: 2px rgb(94, 0, 0) ridge;
+	}
 	.card {
 		color: $light-1;
 		display: flex;
@@ -21,7 +31,7 @@
 		padding: 2rem;
 		width: 25%;
 		min-width: 20rem;
-		height: 57%;
+		height: 60%;
 		background-color: $dark-1;
 		border-radius: 1rem;
 		h1 {
@@ -58,6 +68,7 @@
 				}
 			}
 			button {
+				cursor: pointer;
 				margin-left: 7.5%;
 				margin-bottom: 2rem;
 				margin-top: 1rem;
